@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Form B - Information Certificate</title>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/css/pikaday.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js"></script>
+      <link rel="stylesheet" href="styles.css">
+   </head>
+   <body>
+      <div id="popup" class="popup">
+         <div class="popup-content">
+             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+             </p>
+             <button class="closepopupbutton" id="closePopup">Close</button>
+         </div>
+     </div>
+      </div>
+      <form onsubmit="validateForm()">
+         <div class="certificate-header">
+            <p id="form-b-heading">Form B</p>
+            [am. B.C. Regs. 238/2011, Schs. 2 and 3; 172/2016, s. (b); 206/2016, Sch. 1, s. 1; 6/2023, s. 6; 7/2023, Sch. 1.]
+            <strong>
+               <h2>INFORMATION CERTIFICATE</h2>
+            </strong>
+            <p>(Section 59)</p>
+         </div>
+         <p>The Owners, Strata Plan <input type="text" name="Registration number field" required> certify that the information contained in this certificate with respect to Strata Lot <input type="text" name="Strata lot number field" required> is correct as of the date of this certificate. </p>
+         <ol>
+         <li>
+            <p>Monthly strata fees payable by the owner of the strata lot described above $
+               <input type="text" name="Expected expenses exceed form" pattern="[0-9]+(\.[0-9]+)?" title="Please enter a numerical value." required>
+            </p>
+         </li>
+         <li>
+            <p> Any amount owing to the strata corporation by the owner of the strata lot described above <em>(other than an amount paid into court, or to the strata corporation in trust under section 114 of the Strata Property Act)</em> $ <input type="text" name="Amount owing form" pattern="[0-9]+(\.[0-9]+)?" title="Please enter a numerical value." required>.
+            </p>
+         </li>
+         <li>
+            <p> Are there any agreements under which the owner of the strata lot described above takes responsibility for expenses relating to alterations to the strata lot, the common property, or the common assets?</p>
+            <label>
+            <input type="radio" name="agreements" value="no" required> No </label>
+            <label>
+            <input type="radio" name="agreements" value="yes" required> Yes <em></em>
+            </label>[attach copy of all agreements]
+         </li>
+         <li>
+            <p> Any amount that the owner of the strata lot described above is obligated to pay in the future for a special levy that has already been approved $ <input type="text" name="Special levy amount form" pattern="[0-9]+(\.[0-9]+)?" title="Please enter a numerical value." required>.
+            </p>
+            <p>The payment is to be made by <input type="text" id="select_date" class="date-input" placeholder="Select a date">. </p>
+            <p>Details:</p>
+            <textarea name="parking_stall_details" rows="4" cols="50"></textarea>
+         </li>
+         <li>
+            <p> Any amount by which the expenses of the strata corporation for the current fiscal year are expected to exceed the expenses budgeted for the fiscal year $ <input type="text" name="Expected expenses exceed form" pattern="[0-9]+(\.[0-9]+)?" title="Please enter a numerical value." required>.
+            </p>
+         </li>
+         <li>
+            <p> Amount in the contingency reserve fund minus any expenditures which have already been approved but not yet taken from the fund $ <input type="text" name="Contingency reserve amount form" pattern="[0-9]+(\.[0-9]+)?" title="Please enter a numerical value." required>.
+            <p>Details:</p>
+            <textarea name="parking_stall_details" rows="4" cols="50"></textarea>
+            <p>
+            </p>
+         </li>
+         <li>
+            <p> Are there any amendments to the bylaws that are not yet filed in the land title office?</p>
+            <label>
+            <input type="radio" name="bylaw_amendment" value="no" required> No </label>
+            <label>
+            <input type="radio" name="bylaw_amendment" value="yes" required> Yes </label> [attach copy of all amendments]
+         </li>
+         <li>
+            <p> Are there any resolutions passed by a 3/4 vote or unanimous vote that are to be filed in the land title office but that have not yet been filed in the land title office?</p>
+            <label>
+            <input type="radio" name="bylaw_amendments" value="no" required> No </label>
+            <label>
+            <input type="radio" name="bylaw_amendments" value="yes" required> Yes </label> [attach copy of all amendments]
+            <p style="margin-left: -30px;"> (h.1) Are there any winding-up resolutions that have been passed?</p>
+            <label>
+            <input type="radio" name="winding_up_resolutions" value="no" required> No </label>
+            <label>
+            <input type="radio" name="winding_up_resolutions" value="yes" required> Yes <em></em>[attach copy of all amendments]
+            </label>
+         <li>
+            <p> Has notice been given for any resolutions, requiring a 3/4 vote, 80% vote, or unanimous vote or dealing with an amendment to the bylaws, that have not yet been voted on?</p>
+            <label>
+            <input type="radio" name="unvoted_resolutions" value="no" required> No </label>
+            <label>
+            <input type="radio" name="unvoted_resolutions" value="yes" required> Yes <em></em>
+            </label>[attach copy of all notices]
+         </li>
+         <li>
+            <p> Is the strata corporation party to any court proceeding, arbitration, or tribunal proceeding, and/or are there any judgments or orders against the strata corporation?</p>
+            <label>
+            <input type="radio" name="court_proceedings" value="no" required> No </label>
+            <label>
+            <input type="radio" name="court_proceedings" value="yes" required> Yes <em></em>
+            </label>[attach details]
+         </li>
+         <li>
+            <p> Have any notices or work orders been received by the strata corporation that remain outstanding for the strata lot, the common property, or the common assets?</p>
+            <label>
+            <input type="radio" name="outstanding_notices" value="no" required> No </label>
+            <label>
+            <input type="radio" name="outstanding_notices" value="yes" required> Yes </label>[attach copies of all notices or work orders]
+         </li>
+         <li>
+            <p> Repealed. [B.C. Reg. 6/2023, s. 6 (a).]</p>
+         </li>
+         <li>
+            <p> Are there any parking stall(s) allocated to the strata lot?</p>
+            <label>
+            <input type="radio" name="parking_stalls_allocated" value="no" required> No </label>
+            <label>
+            <input type="radio" name="parking_stalls_allocated" value="yes" required> Yes </label>
+            <div>
+               <p>(i) If no, complete the following by checking the correct box.</p>
+               <label>
+               <input type="checkbox" name="no_parking_stall" value="no_parking_stall_available"> No parking stall is available </label>
+               <br>
+               <label>
+               <input type="checkbox" name="no_parking_stall" value="parking_stall_within_common_property"> No parking stall is allocated to the strata lot but parking stall(s) within common property might be available </label>
+            </div>
+            <div>
+               <p>(ii) If yes, complete the following by checking the correct box(es) and indicating the parking stall(s) to which the checked box(es) apply.</p>
+               <label>
+               <input type="checkbox" name="parking_stall_status" value="part_of_strata_lot"> Parking stall(s) number(s) <input type="text" name="parking_stall_numbers" /> is/are part of the strata lot </label>
+               <br>
+               <label>
+               <input type="checkbox" name="parking_stall_status" value="separate_strata_lot"> Parking stall(s) number(s) <input type="text" name="separate_strata_lot_numbers" /> is/are separate strata lot(s) or part(s) of a strata lot <input type="text"> [strata lot number(s), if known, for each parking stall that is a separate strata lot or part of a separate strata lot] </label>
+               <br>
+               <label>
+               <input type="checkbox" name="parking_stall_status" value="limited_common_property"> Parking stall(s) number(s) <input type="text" name="limited_common_property_numbers" /> is/are limited common property </label>
+               <br>
+               <label>
+               <input type="checkbox" name="parking_stall_status" value="common_property"> Parking stall(s) number(s) <input type="text" name="common_property_numbers"/> is/are common property </label>
+            </div>
+            <div>
+               <p>(iii) For each parking stall allocated to the strata lot that is common property, check the correct box and complete the information.</p>
+               <label>
+               <input type="checkbox" name="allocated_with_approval" value="allocated_with_approval"> Parking stall(s) number(s) <input type="text" name="allocated_with_approval_numbers" /> is/are allocated with strata council approval* </label>
+               <br>
+               <label>
+               <input type="checkbox" name="allocated_with_approval_rented" value="allocated_with_approval_rented"> Parking stall(s) number(s) <input type="text" name="allocated_with_approval_rented_numbers" /> is/are allocated with strata council approval and rented at $ <input type="text" pattern="[0-9]+(\.[0-9]+)?" > per month* </label>
+               <br>
+               <label>
+               <input type="checkbox" name="allocated_by_developer" value="allocated_by_developer"> Parking stall(s) number(s) <input type="text" name="allocated_by_developer_numbers" /> may have been allocated by owner developer assignment </label>
+            </div>
+            <div>
+               <p>Details:</p>
+               <textarea name="parking_stall_details" rows="4" cols="50"></textarea>
+               <p>
+                  <em>[Provide background on the allocation of parking stalls referred to in whichever of the 3 preceding boxes have been selected and attach any applicable documents in the possession of the strata corporation.]</em>
+               </p>
+               <p>
+               <p><strong><em>Note: The allocation of a parking stall that is common property may be limited as short term exclusive use subject to section 76 of the Strata Property Act, or otherwise, and may therefore be subject to change in the future.</em></strong></p>
+               </p>
+            </div>
+         </li>
+         <li>
+            <p> Are there any storage locker(s) allocated to the strata lot?</p>
+            <label>
+            <input type="radio" name="storage_lockers_allocated" value="no" required> No </label>
+            <label>
+            <input type="radio" name="storage_lockers_allocated" value="yes" required> Yes </label>
+            <div>
+               <p>(i) If no, complete the following by checking the correct box.</p>
+               <label>
+               <input type="checkbox" name="no_storage_locker" value="no_storage_locker_available"> No storage locker is available </label>
+               <br>
+               <label>
+               <input type="checkbox" name="no_storage_locker" value="storage_locker_within_common_property"> No storage locker is allocated to the strata lot but storage locker(s) within common property might be available </label>
+            </div>
+            <div>
+               <p>(ii) If yes, complete the following by checking the correct box(es) and indicating the storage locker(s) to which the checked box(es) apply.</p>
+               <label>
+               <input type="checkbox" name="storage_locker_status" value="part_of_strata_lot"> Storage locker(s) number(s) <input type="text" name="storage_locker_numbers_part_of_strata_lot" /> is/are part of the strata lot </label>
+               <br>
+               <label>
+               <input type="checkbox" name="storage_locker_status" value="separate_strata_lot"> Storage locker(s) number(s) <input type="text" name="storage_locker_numbers_separate_strata_lot" /> is/are separate strata lot(s) or part(s) of a separate strata lot <input type="text"> <em>[strata lot number(s), if known, for each locker that is a separate strata lot or part of a separate strata lot]</em>
+               </label>
+               <br>
+               <label>
+               <input type="checkbox" name="storage_locker_status" value="limited_common_property"> Storage locker(s) number(s) <input type="text" name="storage_locker_numbers_limited_common_property" /> is/are limited common property </label>
+               <br>
+               <label>
+               <input type="checkbox" name="storage_locker_status" value="common_property"> Storage locker(s) number(s) <input type="text" name="storage_locker_numbers_common_property" /> is/are common property </label>
+            </div>
+            <div>
+               <p>(iii) For each storage locker allocated to the strata lot that is common property, check the correct box and complete the information.</p>
+               <label>
+               <input type="checkbox" name="allocated_with_approval" value="allocated_with_approval"> Storage locker(s) number(s) <input type="text" name="allocated_with_approval_storage_locker_numbers" /> is/are allocated with strata council approval* </label>
+               <br>
+               <label>
+               <input type="checkbox" name="allocated_with_approval_rented" value="allocated_with_approval_rented"> Storage locker(s) number(s) <input type="text" name="allocated_with_approval_rented_storage_locker_numbers" /> is/are allocated with strata council approval and rented at $ <input type="text" pattern="[0-9]+(\.[0-9]+)?" > per month* </label>
+               <br>
+               <label>
+               <input type="checkbox" name="allocated_by_developer" value="allocated_by_developer"> Storage locker(s) number(s) <input type="text" name="allocated_by_developer_storage_locker_numbers" /> may have been allocated by owner developer assignment </label>
+            </div>
+            <div>
+               <p>Details:</p>
+               <textarea name="storage_locker_details" rows="4" cols="50"></textarea>
+               <p>
+                  <em>[Provide background on the allocation of storage lockers referred to in whichever of the 3 preceding boxes have been selected and attach any applicable documents in the possession of the strata corporation.]</em>
+               </p>
+               <p>
+                  <strong><em>*Note: The allocation of a storage locker that is common property may be limited as short term exclusive use subject to section 76 of the Strata Property Act, or otherwise, and may therefore be subject to change in the future.</strong></em>
+               </p>
+            </div>
+         </li>
+         <li>
+            <p>Provide a summary of the strata corporation's insurance coverage</p>
+            <p>[Provide a summary of the insurance coverage on a separate sheet or sheets.]
+            <p></p>
+            <label>
+            <input type="radio" name="unvoted_resolutions" value="no" required> Attached </label>
+            <label>
+            <input type="radio" name="unvoted_resolutions" value="yes" required> N/A <em></em>
+            </label>
+            </p>
+         </li>
+         <p><strong>Required Attachments</strong></p>
+         <p>In addition to attachments mentioned above, section 59 (4) of the Strata Property Act requires that copies of the following must be attached to this Information Certificate:</p>
+         <ul>
+            <li>
+               <p>The rules of the strata corporation</p>
+               <label>
+               <input type="radio" name="rules_attachments" value="attached" required> Attached </label>
+               <label>
+               <input type="radio" name="rules_attachments" value="n/a" required> N/A <em></em>
+               </label>
+            </li>
+            <li>
+               <p>The current budget of the strata corporation</p>
+               <label>
+               <input type="radio" name="budget_attachments" value="attached" required> Attached </label>
+               <label>
+               <input type="radio" name="budget_attachments" value="n/a" required> N/A <em></em>
+               </label>
+            </li>
+            <li>
+               <p>The most recent depreciation report, if any, obtained by the strata corporation under section 94.</p>
+               <label>
+               <input type="radio" name="report_attachments" value="attached" required> Attached </label>
+               <label>
+               <input type="radio" name="report_attachments" value="n/a" required> N/A <em></em>
+               </label>
+            </li>
+         </ul>
+         <div class="date-picker-container">
+            <p></p>
+            <p></p>
+            <label for="certificate_date">Date:</label>
+            <input type="text" id="certificate_date" name="Date" class="date-input" placeholder="Select a date" required>
+         </div>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/pikaday.min.js"></script>
+         <p></p>
+         <p>Signature of Council Member:
+         <P class="signature-line">
+         <p>________________________________</p>
+         </P>
+         <!-- <div class="signature-container">
+            <label for="signature">
+               <p></p>
+            </label>
+            <canvas id="signature" class="signature-pad" width="300" height="150"></canvas>
+            <button id="clearSignature" class="clear-btn">Clear</button>
+            </div> -->
+         Signature of Second Council Member (not required if council consists of only one member):
+         <P class="signature-line">
+         <p>________________________________</p>
+         </P>
+         <!-- <div class="signature-container">
+            <label for="signatureSecond"></label>
+            <canvas id="signatureSecond" class="signature-pad" width="300" height="150"></canvas>
+            <button id="clearSignatureSecond" class="clear-btn">Clear</button>
+            </div> -->
+         <strong>OR</strong>
+         <p>Signature of Strata Manager, if authorized by the strata corporation:
+         <P class="signature-line">
+         <p>________________________________</p>
+         </P>
+         <!-- <div class="signature-container">
+            <label for="signatureThird"></label>
+            <canvas id="signatureThird" class="signature-pad" width="300" height="150"></canvas>
+            <button id="clearSignatureThird" class="clear-btn">Clear</button>
+            </div> -->
+      </form>
+      <button class="download-btn">Download as PDF</button>
+      <script src="main.js"></script>
+   </body>
+</html>

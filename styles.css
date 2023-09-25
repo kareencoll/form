@@ -1,0 +1,171 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15.3px;
+  padding: 1.9%;
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.55em;
+}
+  
+  .certificate-header {
+    /* border: red solid; */
+    font-size: 15px;
+    margin-bottom: 2.5em;
+    text-align: center;
+  }
+
+  .certificate-header h2 {
+    font-size: 27px;
+    font-weight: 1;
+  }
+
+  .certificate-header p {
+    font-size: 23px;
+    font-weight: 100;
+  }
+  
+  .download-btn {
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: rgb(97, 175, 224);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .download-btn:hover {
+    background-color: #4793d1;
+  }
+  
+ .signature-container {
+    text-align: left;
+  }
+  
+  .signature-pad {
+    border: 1px solid #ccc;
+    height: 13em;
+    width: 23em;
+  }
+  
+  .clear-btn {
+    display: block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .clear-btn:hover {
+    background-color: #e0e0e0;
+  }
+
+#signatureCouncil {
+  border: 1px solid #ccc;
+  float: left;
+  margin-right: 20px; 
+}
+  
+  #signatureSecond {
+    border: 1px solid #ccc;
+  }
+
+  ol {
+    list-style-type: none;
+    counter-reset: item;
+  }
+
+  li {
+    position: relative;
+    margin-bottom: 1em;
+    padding-left: 30px; 
+  }
+
+  li:before {
+    content: "(" counter(item, lower-alpha) ") ";
+    counter-increment: item;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  ol {
+    padding-left: 0; 
+  }
+
+  .signature-line {
+    margin-bottom: 40px;
+}
+
+/* POP-UP */
+
+/* Add your existing CSS styles */
+
+/* Pop-up Styles */
+.popup {
+  top: 0;
+  z-index: 2;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: justify;
+  max-width: 600px;
+  position: relative; 
+}
+
+.popup-content button {
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgb(97, 175, 224);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: block;
+  margin: 0 auto; 
+  margin-top: 7%;
+}
+
+.popup-content button:hover {
+  background-color:#4793d1;
+}
+
+.popup-content {
+  align-self: justify ;
+  transform: translate(-50%, -50%); 
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+}
+
+.closepopupbutton {
+  justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+  
